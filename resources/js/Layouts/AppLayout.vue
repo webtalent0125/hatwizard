@@ -9,6 +9,7 @@ import { Link } from '@inertiajs/vue3';
 import Logo from "@/Components/Logo.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
+import FooterNav from "@/Components/FooterNav.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -19,13 +20,13 @@ const showingNavigationDropdown = ref(false);
             <nav class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16">
-                        <div class="flex">
+                    <div class="flex justify-between h-[85px]">
+                        <div class="flex justify-between w-full">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('home')">
                                     <Logo
-                                        class="block h-9 w-auto fill-current text-gray-800"
+                                        class="block h-9 w-auto fill-current text-gray-800 mt-[30px]"
                                     />
                                 </Link>
                             </div>
@@ -91,19 +92,16 @@ const showingNavigationDropdown = ref(false);
                             </div>
                         </div>
                         <div class="hidden sm:flex sm:items-center sm:ml-6" v-else>
-
-                            <div class="ml-3 relative">
-                                <Link>
-                                    <SecondaryButton>
-                                       Sign Up
-                                    </SecondaryButton>
-                                </Link>
-                                <Link class="ml-2">
-                                    <PrimaryButton>
-                                        Log in
-                                    </PrimaryButton>
-                                </Link>
-                            </div>
+                            <Link :href="route('register')">
+                                <SecondaryButton class="w-[100px] justify-center">
+                                    Sign Up
+                                </SecondaryButton>
+                            </Link>
+                            <Link class="ml-2 w-[100px] justify-center" :href="route('login')">
+                                <PrimaryButton>
+                                    Log in
+                                </PrimaryButton>
+                            </Link>
                         </div>
 
                         <!-- Hamburger -->
@@ -147,7 +145,7 @@ const showingNavigationDropdown = ref(false);
                 >
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                            Home
                         </ResponsiveNavLink>
                     </div>
 
@@ -168,12 +166,61 @@ const showingNavigationDropdown = ref(false);
                         </div>
                     </div>
                 </div>
+
+                <div
+                    :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
+                    class="sm:hidden"
+                    v-else
+                >
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('home')" :active="route().current('home')">
+                            Home
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink :href="route('order')" :active="route().current('order')">
+                            Order Now
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('order.status')" :active="route().current('order.status')">
+                            Order Status
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('faq')" :active="route().current('faq')">
+                            FAQ
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('about')" :active="route().current('about')">
+                            About Us
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('contact')" :active="route().current('contact')">
+                            Contact Us
+                        </ResponsiveNavLink>
+
+                    </div>
+
+                    <!-- Responsive Settings Options -->
+                    <div class="p-2 border-t border-gray-200">
+                        <div class="flex space-y-1 items-center">
+                            <div class="relative">
+                                <Link :href="route('register')">
+                                    <SecondaryButton>
+                                        Sign Up
+                                    </SecondaryButton>
+                                </Link>
+                                <Link class="ml-2" :href="route('login')">
+                                    <PrimaryButton>
+                                        Log in
+                                    </PrimaryButton>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
 
             <!-- Page Content -->
             <main>
                 <slot />
             </main>
+
+            <FooterNav />
         </div>
     </div>
 </template>
