@@ -11,7 +11,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
         <div class="bg-primary0 relative">
             <img :src="asset('assets/img/hero_1.png')" alt="" class="absolute top-0 left-0">
 
-            <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 text-center">
+            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-32 text-center">
                 <div class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl">
                     About hat wizard
                 </div>
@@ -19,7 +19,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
             </div>
         </div>
         <div class="bg-white">
-            <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
                 <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
                     <img :src="asset('assets/img/about.png')" alt="" />
                 </div>

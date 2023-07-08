@@ -20,11 +20,16 @@ export default {
                 'primary-dark2': '#0E0716',
                 white2: '#F5F5F5',
                 whitec: '#CCCCCC',
+                review: '#FFA800',
+                text333: '#333333',
             },
             fontFamily: {
                 sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
                 'erica-one': ['Erica One', ...defaultTheme.fontFamily.sans],
             },
+            maxWidth: {
+                '8xl': '1350px'
+            }
         },
     },
 

@@ -4,6 +4,9 @@ import { Head } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Link } from '@inertiajs/vue3';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import Partners from "@/Components/Partners.vue";
+import HatsRow from "@/Components/HatsRow.vue";
+import Reviews from "@/Components/Reviews.vue";
 
 </script>
 
@@ -15,7 +18,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
                 <img :src="asset('assets/img/hero_1.png')" alt="" class="absolute top-0 left-0">
                 <img :src="asset('assets/img/hero_2.png')" alt="" class="absolute bottom-0 right-0">
 
-            <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40 z-10 relative">
+            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40 z-10 relative">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
                     <div class="uppercase py-1 leading-6 text-primary2 font-erica-one text-3xl">
                         Custom Hats
@@ -34,7 +37,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
             </div>
         </div>
         <div class="bg-white">
-            <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
                 <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
                     <img :src="asset('assets/img/hero_3.png')" alt="" />
                 </div>
@@ -61,5 +64,12 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
                 </div>
             </div>
         </div>
+
+        <Reviews />
+
+        <Partners />
+
+        <HatsRow />
+
     </AppLayout>
 </template>

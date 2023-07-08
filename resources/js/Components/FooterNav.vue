@@ -92,7 +92,7 @@ const navigation = {
 
 <template>
     <footer class="bg-primary-dark" aria-labelledby="footer-heading">
-        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-16 lg:px-8 lg:pt-16">
+        <div class="mx-auto max-w-8xl px-6 pb-8 pt-16 sm:pt-16 lg:px-8 lg:pt-16">
             <div class="xl:grid xl:grid-cols-5 xl:gap-8">
                 <div class="space-y-8 xl:col-span-2">
                     <Logo />
