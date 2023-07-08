@@ -3,6 +3,7 @@ import InputError from '@/Components/InputError.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import AuthLayout from "@/Layouts/AuthLayout.vue";
+import AuthLayout2 from "@/Layouts/AuthLayout2.vue";
 
 defineProps({
     status: {
@@ -20,7 +21,7 @@ const submit = () => {
 </script>
 
 <template>
-    <AuthLayout>
+    <AuthLayout2>
         <Head title="Forgot Password" />
 
         <div class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl mb-8">
@@ -66,5 +67,5 @@ const submit = () => {
             </div>
 
         </form>
-    </AuthLayout>
+    </AuthLayout2>
 </template>

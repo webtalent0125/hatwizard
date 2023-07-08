@@ -39,7 +39,7 @@ const submit = () => {
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit" class="max-w-md">
+        <form @submit.prevent="submit" class="max-w-[430px]">
             <div>
                 <TextInput
                     id="email"
@@ -47,7 +47,6 @@ const submit = () => {
                     class="mt-1 block w-full"
                     v-model="form.email"
                     required
-                    autofocus
                     autocomplete="username"
                     placeholder="Username or email address"
                 />

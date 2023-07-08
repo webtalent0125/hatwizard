@@ -27,7 +27,7 @@ const submit = () => {
             This is a secure area of the application. Please confirm your password before continuing.
         </div>
 
-        <form @submit.prevent="submit" class="max-w-md">
+        <form @submit.prevent="submit" class="max-w-[430px]">
             <div>
                 <TextInput
                     id="password"

@@ -28,7 +28,7 @@ export default {
                 'erica-one': ['Erica One', ...defaultTheme.fontFamily.sans],
             },
             maxWidth: {
-                '8xl': '1350px'
+                '8xl': '1350px',
             }
         },
     },

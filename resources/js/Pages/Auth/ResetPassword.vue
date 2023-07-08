@@ -37,7 +37,7 @@ const submit = () => {
             Reset your password
         </div>
 
-        <form @submit.prevent="submit" class="max-w-md">
+        <form @submit.prevent="submit" class="max-w-[430px]">
             <div>
                 <TextInput
                     id="email"
