@@ -2,12 +2,15 @@
 import { Head } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import AccountNav from "@/Components/AccountNav.vue";
+import AccountHero from "@/Components/AccountHero.vue";
 </script>
 
 <template>
     <Head title="Account Details" />
 
     <AppLayout>
+        <AccountHero />
+
         <div class="py-12 bg-white">
             <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex space-x-4">
