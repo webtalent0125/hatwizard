@@ -7,6 +7,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Partners from "@/Components/Partners.vue";
 import HatsRow from "@/Components/HatsRow.vue";
 import Reviews from "@/Components/Reviews.vue";
+import HatHeadComponent from "@/Components/HatHeadComponent.vue";
 
 </script>
 
@@ -30,10 +31,7 @@ import Reviews from "@/Components/Reviews.vue";
                         <Link :href="route('order')" class="rounded-full bg-white px-16 py-4 font-erica-one text-2xl uppercase text-primary shadow-xl">Order Now</Link>
                     </div>
                 </div>
-                <div class="relative mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0">
-                    <div class="bg-white rounded-full inset-0 absolute z-10 m-[5px]"></div>
-                    <img :src="asset('assets/img/head.png')" alt="" class="w-full relative z-20 -translate-x-[20px] -translate-y-[10px] md:-translate-x-[50px] md:-translate-y-[20px]" />
-                </div>
+                <HatHeadComponent />
             </div>
         </div>
         <div class="bg-white">

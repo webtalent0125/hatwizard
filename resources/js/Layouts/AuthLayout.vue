@@ -1,5 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
+import HatHeadComponent from "@/Components/HatHeadComponent.vue";
 </script>
 <template>
     <AppLayout>
@@ -11,10 +12,8 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
                     <slot />
                 </div>
-                <div class="relative mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0">
-                    <div class="bg-white rounded-full inset-0 absolute z-10 m-[5px]"></div>
-                    <img :src="asset('assets/img/head.png')" alt="" class="w-full relative z-20 -translate-x-[20px] -translate-y-[10px] md:-translate-x-[50px] md:-translate-y-[20px]" />
-                </div>
+
+                <HatHeadComponent />
             </div>
         </div>
     </AppLayout>
