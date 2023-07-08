@@ -53,38 +53,16 @@ const showingNavigationDropdown = ref(false);
                 <div class="hidden sm:flex sm:items-center sm:ml-6" v-if="$page.props.auth.user">
                     <!-- Settings Dropdown -->
                     <div class="ml-3 relative">
-                        <Dropdown align="right" width="48">
-                            <template #trigger>
-                                        <span class="inline-flex rounded-md">
-                                            <button
-                                                type="button"
-                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
-                                            >
-                                                {{ $page.props.auth.user.name }}
-
-                                                <svg
-                                                    class="ml-2 -mr-0.5 h-4 w-4"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 20 20"
-                                                    fill="currentColor"
-                                                >
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd"
-                                                    />
-                                                </svg>
-                                            </button>
-                                        </span>
-                            </template>
-
-                            <template #content>
-                                <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
-                                <DropdownLink :href="route('logout')" method="post" as="button">
-                                    Log Out
-                                </DropdownLink>
-                            </template>
-                        </Dropdown>
+                        <Link :href="route('dashboard')" class="group block flex-shrink-0">
+                            <div class="flex items-center">
+                                <div class="w-9">
+                                    <img class="inline-block w-full rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray-700 group-hover:text-primary2 font-bold whitespace-nowrap"> {{ $page.props.auth.user.name }}</p>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div class="hidden sm:flex sm:items-center sm:ml-6" v-else>
@@ -133,40 +111,10 @@ const showingNavigationDropdown = ref(false);
             </div>
         </div>
 
-        <!-- Responsive Navigation Menu -->
-        <div
-            :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
-            class="sm:hidden"
-            v-if="$page.props.auth.user"
-        >
-            <div class="pt-2 pb-3 space-y-1">
-                <ResponsiveNavLink :href="route('dashboard')" :active="route().current('home')">
-                    Home
-                </ResponsiveNavLink>
-            </div>
-
-            <!-- Responsive Settings Options -->
-            <div class="pt-4 pb-1 border-t border-gray-200">
-                <div class="px-4">
-                    <div class="font-medium text-base text-gray-800">
-                        {{ $page.props.auth.user.name }}
-                    </div>
-                    <div class="font-medium text-sm text-gray-500">{{ $page.props.auth.user.email }}</div>
-                </div>
-
-                <div class="mt-3 space-y-1">
-                    <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
-                    <ResponsiveNavLink :href="route('logout')" method="post" as="button">
-                        Log Out
-                    </ResponsiveNavLink>
-                </div>
-            </div>
-        </div>
 
         <div
             :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
             class="sm:hidden"
-            v-else
         >
             <div class="pt-2 pb-3 space-y-1">
                 <ResponsiveNavLink :href="route('home')" :active="route().current('home')">
@@ -192,7 +140,23 @@ const showingNavigationDropdown = ref(false);
             </div>
 
             <!-- Responsive Settings Options -->
-            <div class="p-2 border-t border-gray-200">
+            <div class="p-2 border-t border-gray-200"
+                 v-if="$page.props.auth.user"
+            >
+                <div class="flex space-y-1 items-center">
+                    <Link :href="route('dashboard')" class="group block flex-shrink-0 ml-3">
+                        <div class="flex items-center">
+                            <div class="w-9">
+                                <img class="inline-block w-full rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-700 group-hover:text-primary2 font-bold whitespace-nowrap"> {{ $page.props.auth.user.name }}</p>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+            <div class="p-2 border-t border-gray-200" v-else>
                 <div class="flex space-y-1 items-center">
                     <div class="relative">
                         <Link :href="route('register')">

@@ -26,9 +26,11 @@ Route::get('/returns', [\App\Http\Controllers\FrontController::class, 'returns']
 Route::get('/terms', [\App\Http\Controllers\FrontController::class, 'terms'])->name('terms');
 Route::get('/policy', [\App\Http\Controllers\FrontController::class, 'policy'])->name('policy');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard/address', [\App\Http\Controllers\DashboardController::class, 'address'])->name('dashboard.address');
+    Route::get('/dashboard/account', [\App\Http\Controllers\DashboardController::class, 'account'])->name('dashboard.account');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
