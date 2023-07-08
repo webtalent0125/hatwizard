@@ -25,9 +25,9 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
                     </div>
                 </div>
                 <div class="relative mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-                    <div class="bg-white rounded-full flex">
-                        <img :src="asset('assets/img/head.png')" alt="" class="w-full z-10" />
-                    </div>
+                    <div class="bg-white rounded-full inset-0 absolute m-[20px] z-10"></div>
+                    <img :src="asset('assets/img/head.png')" alt="" class="w-full absolute z-20" />
+                    <img :src="asset('assets/img/head.png')" alt="" class="w-full opacity-0 rotate-[10deg]" />
                 </div>
             </div>
         </div>
