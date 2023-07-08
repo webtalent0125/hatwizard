@@ -14,7 +14,7 @@ import Reviews from "@/Components/Reviews.vue";
         <div class="bg-primary0 relative">
             <img :src="asset('assets/img/hero_1.png')" alt="" class="absolute top-0 left-0">
 
-            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-32 text-center">
+            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-24 text-center relative">
                 <div class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl">
                     Start
                 </div>

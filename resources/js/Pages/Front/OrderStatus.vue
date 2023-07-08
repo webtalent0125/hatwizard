@@ -25,7 +25,7 @@ const submit = () => {
             <img :src="asset('assets/img/hero_1.png')" alt="" class="absolute top-0 left-0">
             <img :src="asset('assets/img/hero_2.png')" alt="" class="absolute bottom-0 right-0">
 
-            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-32 text-center min-h-[80vh] flex flex-col justify-center">
+            <div class="mx-auto max-w-8xl px-6 py-16 sm:py-32 text-center min-h-[80vh] flex flex-col justify-center relative">
                 <div class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl">
                     Look Up Your Orders
                 </div>
