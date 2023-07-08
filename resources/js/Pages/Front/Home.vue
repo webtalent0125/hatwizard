@@ -21,7 +21,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
                         <img :src="asset('assets/img/design-text-img.png')" alt="">
                     </div>
                     <div class="mt-10 flex items-center gap-x-6">
-                        <Link :href="route('order')" class="rounded-full bg-white px-16 py-4 text-sm font-erica-one text-2xl uppercase text-primary shadow-xl">Order Now</Link>
+                        <Link :href="route('order')" class="rounded-full bg-white px-16 py-4 font-erica-one text-2xl uppercase text-primary shadow-xl">Order Now</Link>
                     </div>
                 </div>
                 <div class="relative mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
