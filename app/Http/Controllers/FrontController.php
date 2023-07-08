@@ -31,4 +31,16 @@ class FrontController extends Controller
     {
         return Inertia::render('Front/Contact');
     }
+    public function returns()
+    {
+        return Inertia::render('Front/Returns');
+    }
+    public function terms()
+    {
+        return Inertia::render('Front/Terms');
+    }
+    public function policy()
+    {
+        return Inertia::render('Front/Policy');
+    }
 }

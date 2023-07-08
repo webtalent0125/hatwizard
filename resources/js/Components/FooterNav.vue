@@ -1,20 +1,21 @@
 <script setup>
 import { defineComponent, h } from 'vue'
 import Logo from "@/Components/Logo.vue";
+import { Link } from '@inertiajs/vue3';
 
 const navigation = {
     solutions: [
-        { name: 'Home', href: '#' },
-        { name: 'Order Now', href: '#' },
-        { name: 'Order Status', href: '#' },
-        { name: 'About Us', href: '#' },
-        { name: 'Contact Us', href: '#' },
+        { name: 'Home', href: route('home') },
+        { name: 'Order Now', href: route('order') },
+        { name: 'Order Status', href: route('order.status') },
+        { name: 'About Us', href: route('about') },
+        { name: 'Contact Us', href: route('contact') },
     ],
     support: [
-        { name: 'FAQ', href: '#' },
-        { name: 'Returns', href: '#' },
-        { name: 'Terms of Service', href: '#' },
-        { name: 'Privacy Policy', href: '#' },
+        { name: 'FAQ', href: route('faq') },
+        { name: 'Returns', href: route('returns') },
+        { name: 'Terms of Service', href: route('terms') },
+        { name: 'Privacy Policy', href: route('policy') },
     ],
     social: [
         {
@@ -100,28 +101,28 @@ const navigation = {
                 <div class="mt-6 md:grid md:grid-cols-3 md:gap-8 xl:col-span-3">
                     <div>
                         <h3 class="text-sm font-semibold leading-6 text-white">Hat Wizard</h3>
-                        <ul role="list" class="mt-6 space-y-4">
+                        <ul role="list" class="mt-6 space-y-2">
                             <li v-for="item in navigation.solutions" :key="item.name">
-                                <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
+                                <Link :href="item.href" class="text-sm leading-6 text-gray-200 hover:text-white">{{ item.name }}</Link>
                             </li>
                         </ul>
                     </div>
                     <div class="mt-10 md:mt-0">
                         <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
-                        <ul role="list" class="mt-6 space-y-4">
+                        <ul role="list" class="mt-6 space-y-2">
                             <li v-for="item in navigation.support" :key="item.name">
-                                <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
+                                <Link :href="item.href" class="text-sm leading-6 text-gray-200 hover:text-white">{{ item.name }}</Link>
                             </li>
                         </ul>
                     </div>
                     <div class="mt-10 md:mt-0">
                         <h3 class="text-sm font-semibold leading-6 text-white">Contact</h3>
                         <div role="list" class="mt-6 space-y-2">
-                            <p class="text-sm leading-6 text-gray-300">Phone: <a href="tel:+19038691493">903-869-1493</a></p>
-                            <p class="text-sm leading-6 text-gray-300">Email: <a href="mailto:info@hatwizard.com">info@hatwizard.com</a></p>
+                            <p class="text-sm leading-6 text-gray-200">Phone: <a href="tel:+19038691493">903-869-1493</a></p>
+                            <p class="text-sm leading-6 text-gray-200">Email: <a href="mailto:info@hatwizard.com">info@hatwizard.com</a></p>
                         </div>
                         <div class="flex space-x-6 mt-6">
-                            <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-400">
+                            <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-200 hover:text-white">
                                 <span class="sr-only">{{ item.name }}</span>
                                 <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
                             </a>
@@ -130,8 +131,8 @@ const navigation = {
                 </div>
             </div>
         </div>
-        <div class="flex items-center bg-primary-dark2 mt-16 pt-8 sm:mt-20 lg:mt-24">
-            <p class="text-xs leading-5 text-gray-400">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+        <div class="w-full text-gray-400 bg-primary-dark2 text-center py-6 text-whitec mt-16 sm:mt-20">
+            &copy; 2023 Hat Wizard, Inc. All rights reserved.
         </div>
     </footer>
 </template>

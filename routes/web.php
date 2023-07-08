@@ -22,6 +22,9 @@ Route::get('/order/status', [\App\Http\Controllers\FrontController::class, 'orde
 Route::get('/about', [\App\Http\Controllers\FrontController::class, 'about'])->name('about');
 Route::get('/faq', [\App\Http\Controllers\FrontController::class, 'faq'])->name('faq');
 Route::get('/contact', [\App\Http\Controllers\FrontController::class, 'contact'])->name('contact');
+Route::get('/returns', [\App\Http\Controllers\FrontController::class, 'returns'])->name('returns');
+Route::get('/terms', [\App\Http\Controllers\FrontController::class, 'terms'])->name('terms');
+Route::get('/policy', [\App\Http\Controllers\FrontController::class, 'policy'])->name('policy');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

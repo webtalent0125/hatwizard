@@ -13,11 +13,13 @@ export default {
     theme: {
         extend: {
             colors: {
+                primary0: '#e5dfeb',
                 primary: '#502A7B',
                 primary2: '#C165A7',
-                'primary-dark': '#0E0716',
-                'primary-dark2': '#160C22',
+                'primary-dark': '#160C22',
+                'primary-dark2': '#0E0716',
                 white2: '#F5F5F5',
+                whitec: '#CCCCCC',
             },
             fontFamily: {
                 sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
