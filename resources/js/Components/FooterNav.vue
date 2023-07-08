@@ -4,28 +4,17 @@ import Logo from "@/Components/Logo.vue";
 
 const navigation = {
     solutions: [
-        { name: 'Marketing', href: '#' },
-        { name: 'Analytics', href: '#' },
-        { name: 'Commerce', href: '#' },
-        { name: 'Insights', href: '#' },
+        { name: 'Home', href: '#' },
+        { name: 'Order Now', href: '#' },
+        { name: 'Order Status', href: '#' },
+        { name: 'About Us', href: '#' },
+        { name: 'Contact Us', href: '#' },
     ],
     support: [
-        { name: 'Pricing', href: '#' },
-        { name: 'Documentation', href: '#' },
-        { name: 'Guides', href: '#' },
-        { name: 'API Status', href: '#' },
-    ],
-    company: [
-        { name: 'About', href: '#' },
-        { name: 'Blog', href: '#' },
-        { name: 'Jobs', href: '#' },
-        { name: 'Press', href: '#' },
-        { name: 'Partners', href: '#' },
-    ],
-    legal: [
-        { name: 'Claim', href: '#' },
-        { name: 'Privacy', href: '#' },
-        { name: 'Terms', href: '#' },
+        { name: 'FAQ', href: '#' },
+        { name: 'Returns', href: '#' },
+        { name: 'Terms of Service', href: '#' },
+        { name: 'Privacy Policy', href: '#' },
     ],
     social: [
         {
@@ -102,61 +91,47 @@ const navigation = {
 
 <template>
     <footer class="bg-primary-dark" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" class="sr-only">Footer</h2>
-        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-                <div class="space-y-8">
+        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-16 lg:px-8 lg:pt-16">
+            <div class="xl:grid xl:grid-cols-5 xl:gap-8">
+                <div class="space-y-8 xl:col-span-2">
                     <Logo />
-                    <p class="text-sm leading-6 text-gray-300">Making the world a better place through constructing elegant hierarchies.</p>
-                    <div class="flex space-x-6">
-                        <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-400">
-                            <span class="sr-only">{{ item.name }}</span>
-                            <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
-                        </a>
-                    </div>
+                    <img :src="asset('assets/img/usa.png')" alt="USA" class="w-[102px] h-auto">
                 </div>
-                <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm font-semibold leading-6 text-white">Solutions</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li v-for="item in navigation.solutions" :key="item.name">
-                                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-10 md:mt-0">
-                            <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li v-for="item in navigation.support" :key="item.name">
-                                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="mt-6 md:grid md:grid-cols-3 md:gap-8 xl:col-span-3">
+                    <div>
+                        <h3 class="text-sm font-semibold leading-6 text-white">Hat Wizard</h3>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li v-for="item in navigation.solutions" :key="item.name">
+                                <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm font-semibold leading-6 text-white">Company</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li v-for="item in navigation.company" :key="item.name">
-                                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                                </li>
-                            </ul>
+                    <div class="mt-10 md:mt-0">
+                        <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li v-for="item in navigation.support" :key="item.name">
+                                <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-10 md:mt-0">
+                        <h3 class="text-sm font-semibold leading-6 text-white">Contact</h3>
+                        <div role="list" class="mt-6 space-y-2">
+                            <p class="text-sm leading-6 text-gray-300">Phone: <a href="tel:+19038691493">903-869-1493</a></p>
+                            <p class="text-sm leading-6 text-gray-300">Email: <a href="mailto:info@hatwizard.com">info@hatwizard.com</a></p>
                         </div>
-                        <div class="mt-10 md:mt-0">
-                            <h3 class="text-sm font-semibold leading-6 text-white">Legal</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li v-for="item in navigation.legal" :key="item.name">
-                                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                                </li>
-                            </ul>
+                        <div class="flex space-x-6 mt-6">
+                            <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-400">
+                                <span class="sr-only">{{ item.name }}</span>
+                                <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-                <p class="text-xs leading-5 text-gray-400">&copy; 2020 Your Company, Inc. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="flex items-center bg-primary-dark2 mt-16 pt-8 sm:mt-20 lg:mt-24">
+            <p class="text-xs leading-5 text-gray-400">&copy; 2020 Your Company, Inc. All rights reserved.</p>
         </div>
     </footer>
 </template>
