@@ -1,7 +1,10 @@
 <script setup>
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import AppLayout from "@/Layouts/AppLayout.vue";
+import { ref } from "vue";
+import { Collapse } from "vue-collapsed";
+
+const isExpanded = ref(false);
 </script>
 
 <template>
@@ -30,7 +33,22 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         >
                             <img
                                 :src="asset('assets/img/step/start.png')"
-                                class="mr-2 text-primary2"
+                                class="mr-2"
+                                alt="start"
+                            />
+                            Start
+                        </div>
+                        <img
+                            :src="asset('assets/img/step/dots.png')"
+                            class="lg:block hidden object-contain"
+                            alt="start"
+                        />
+                        <div
+                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
+                        >
+                            <img
+                                :src="asset('assets/img/step/Selectedcap.png')"
+                                class="mr-2"
                                 alt="start"
                             />
                             Select Hats
@@ -44,11 +62,11 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
-                                :src="asset('assets/img/step/start.png')"
+                                :src="asset('assets/img/step/vector1.png')"
                                 class="mr-2"
                                 alt="start"
                             />
-                            Start
+                            Artwork
                         </div>
                         <img
                             :src="asset('assets/img/step/dots.png')"
@@ -59,26 +77,13 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
-                                :src="asset('assets/img/step/start.png')"
+                                :src="
+                                    asset('assets/img/step/shopping-card.png')
+                                "
                                 class="mr-2"
                                 alt="start"
                             />
-                            Start
-                        </div>
-                        <img
-                            :src="asset('assets/img/step/dots.png')"
-                            class="lg:block hidden object-contain"
-                            alt="start"
-                        />
-                        <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center     font-semibold"
-                        >
-                            <img
-                                :src="asset('assets/img/step/start.png')"
-                                class="mr-2"
-                                alt="start"
-                            />
-                            Start
+                            Checkout
                         </div>
                     </div>
                 </div>
@@ -104,8 +109,11 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             alt=""
                         />
                     </div>
-                   
-                    <div class="w-full flex justify-between">
+
+                    <div
+                        class="w-full flex justify-between cursor-pointer"
+                        @click="isExpanded = !isExpanded"
+                    >
                         <div class="flex">
                             <img
                                 :src="asset('assets/img/order1/image2.png')"
@@ -130,318 +138,330 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         </button>
                     </div>
 
-                    <div class="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
-                        <div class="rounded p-[10px] bg-primary bg-opacity-5">
-                            <p
-                                class="font-semibold text-center p-[10px] text-primary"
+                    <Collapse :when="isExpanded" class="v-collapse">
+                        <div class="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
                             >
-                                One Size
+                                <p
+                                    class="font-semibold text-center p-[10px] text-primary"
+                                >
+                                    One Size
+                                </p>
+                                <div
+                                    class="bg-white rounded text-center p-[10px]"
+                                >
+                                    7” - 7 3/4”
+                                </div>
+                            </div>
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
+                            >
+                                <div class="grid grid-cols-7 gap-2">
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            1-6
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $22
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            7-23
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $20
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            24
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $19
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            48
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $18
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            96
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $17
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            144
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $16
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            288+
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $$15
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                            <p class="text-gray-400 text-right text-sm">
+                                Price includes decoration
                             </p>
-                            <div class="bg-white rounded text-center p-[10px]">
-                                7” - 7 3/4”
-                            </div>
                         </div>
-                        <div class="rounded p-[10px] bg-primary bg-opacity-5">
-                            <div class="grid grid-cols-7 gap-2">
-                                <div>
-                                    <p
-                                        class="font-semibold text-center p-[10px] text-primary"
-                                    >
-                                        1-6
-                                    </p>
-                                    <div
-                                        class="bg-white rounded text-center p-[10px]"
-                                    >
-                                        $22
-                                    </div>
-                                </div>
-                                <div>
-                                    <p
-                                        class="font-semibold text-center p-[10px] text-primary"
-                                    >
-                                        1-6
-                                    </p>
-                                    <div
-                                        class="bg-white rounded text-center p-[10px]"
-                                    >
-                                        $22
-                                    </div>
-                                </div>
-                                <div>
-                                    <p
-                                        class="font-semibold text-center p-[10px] text-primary"
-                                    >
-                                        1-6
-                                    </p>
-                                    <div
-                                        class="bg-white rounded text-center p-[10px]"
-                                    >
-                                        $22
-                                    </div>
-                                </div>
-                                <div>
-                                    <p
-                                        class="font-semibold text-center p-[10px] text-primary"
-                                    >
-                                        1-6
-                                    </p>
-                                    <div
-                                        class="bg-white rounded text-center p-[10px]"
-                                    >
-                                        $22
-                                    </div>
-                                </div>
-                                <div>
-                                    <p
-                                        class="font-semibold text-center p-[10px] text-primary"
-                                    >
-                                        1-6
-                                    </p>
-                                    <div
-                                        class="bg-white rounded text-center p-[10px]"
-                                    >
-                                        $22
-                                    </div>
-                                </div>
-                                <div>
-                                    <p
-                                        class="font-semibold text-center p-[10px] text-primary"
-                                    >
-                                        1-6
-                                    </p>
-                                    <div
-                                        class="bg-white rounded text-center p-[10px]"
-                                    >
-                                        $22
-                                    </div>
-                                </div>
-                                <div>
-                                    <p
-                                        class="font-semibold text-center p-[10px] text-primary"
-                                    >
-                                        1-6
-                                    </p>
-                                    <div
-                                        class="bg-white rounded text-center p-[10px]"
-                                    >
-                                        $22
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div
-                        class="grid lg:grid-cols-2 grid-cols-1 gap-[30px] border-b border-gray-300 pb-10"
-                    >
-                        <div class="p-[10px]">
-                            <p class="text-right">OSFA</p>
-                            <div class="flex flex-col gap-[30px]">
-                                <div class="flex justify-between">
-                                    <div class="flex">
-                                        <img
-                                            :src="
-                                                asset(
-                                                    'assets/img/order1/hat_62.png'
-                                                )
-                                            "
-                                            class="h-[70px] mr-[30px]"
-                                            alt=""
-                                        />
-                                        <span class="my-auto">Black</span>
+                        <div
+                            class="grid lg:grid-cols-2 grid-cols-1 gap-[30px] border-b border-gray-300 pb-10"
+                        >
+                            <div class="p-[10px]">
+                                <p class="text-right">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <div
+                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
+                                        >
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                class="focus:outline-none w-[50px] text-center"
+                                                placeholder="0"
+                                            />
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div
-                                        class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                    >
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <div
+                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
                                         >
-                                            -
-                                        </button>
-                                        <input
-                                            class="focus:outline-none w-[50px] text-center"
-                                            placeholder="0"
-                                        />
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                class="focus:outline-none w-[50px] text-center"
+                                                placeholder="0"
+                                            />
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <div
+                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
                                         >
-                                            +
-                                        </button>
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                class="focus:outline-none w-[50px] text-center"
+                                                placeholder="0"
+                                            />
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex justify-between">
-                                    <div class="flex">
-                                        <img
-                                            :src="
-                                                asset(
-                                                    'assets/img/order1/hat_62.png'
-                                                )
-                                            "
-                                            class="h-[70px] mr-[30px]"
-                                            alt=""
-                                        />
-                                        <span class="my-auto">Black</span>
+                            </div>
+                            <div class="p-[10px]">
+                                <p class="text-left">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <div
+                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
+                                        >
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                class="focus:outline-none w-[50px] text-center"
+                                                placeholder="0"
+                                            />
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div
-                                        class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                    >
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <div
+                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
                                         >
-                                            -
-                                        </button>
-                                        <input
-                                            class="focus:outline-none w-[50px] text-center"
-                                            placeholder="0"
-                                        />
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            +
-                                        </button>
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                class="focus:outline-none w-[50px] text-center"
+                                                placeholder="0"
+                                            />
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="flex justify-between">
-                                    <div class="flex">
-                                        <img
-                                            :src="
-                                                asset(
-                                                    'assets/img/order1/hat_62.png'
-                                                )
-                                            "
-                                            class="h-[70px] mr-[30px]"
-                                            alt=""
-                                        />
-                                        <span class="my-auto">Black</span>
-                                    </div>
-                                    <div
-                                        class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                    >
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <div
+                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
                                         >
-                                            -
-                                        </button>
-                                        <input
-                                            class="focus:outline-none w-[50px] text-center"
-                                            placeholder="0"
-                                        />
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            +
-                                        </button>
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                -
+                                            </button>
+                                            <input
+                                                class="focus:outline-none w-[50px] text-center"
+                                                placeholder="0"
+                                            />
+                                            <button
+                                                class="cursor-pointer w-[25px] px-1"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="p-[10px]">
-                            <p class="text-left">OSFA</p>
-                            <div class="flex flex-col gap-[30px]">
-                                <div class="flex justify-between">
-                                    <div class="flex">
-                                        <img
-                                            :src="
-                                                asset(
-                                                    'assets/img/order1/hat_62.png'
-                                                )
-                                            "
-                                            class="h-[70px] mr-[30px]"
-                                            alt=""
-                                        />
-                                        <span class="my-auto">Black</span>
-                                    </div>
-                                    <div
-                                        class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                    >
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            -
-                                        </button>
-                                        <input
-                                            class="focus:outline-none w-[50px] text-center"
-                                            placeholder="0"
-                                        />
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between">
-                                    <div class="flex">
-                                        <img
-                                            :src="
-                                                asset(
-                                                    'assets/img/order1/hat_62.png'
-                                                )
-                                            "
-                                            class="h-[70px] mr-[30px]"
-                                            alt=""
-                                        />
-                                        <span class="my-auto">Black</span>
-                                    </div>
-                                    <div
-                                        class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                    >
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            -
-                                        </button>
-                                        <input
-                                            class="focus:outline-none w-[50px] text-center"
-                                            placeholder="0"
-                                        />
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="flex justify-between">
-                                    <div class="flex">
-                                        <img
-                                            :src="
-                                                asset(
-                                                    'assets/img/order1/hat_62.png'
-                                                )
-                                            "
-                                            class="h-[70px] mr-[30px]"
-                                            alt=""
-                                        />
-                                        <span class="my-auto">Black</span>
-                                    </div>
-                                    <div
-                                        class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                    >
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            -
-                                        </button>
-                                        <input
-                                            class="focus:outline-none w-[50px] text-center"
-                                            placeholder="0"
-                                        />
-                                        <button
-                                            class="cursor-pointer w-[25px] px-1"
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </Collapse>
                 </div>
 
                 <div class="flex flex-col gap-[30px] w-full">
                     <div
-                        class="w-full p-2 bg-gradient-to-l  from-[#d6a0c7] from-10% to-[#f0e0ec] px-[30px] py-[25px] flex justify-between rounded relative"
+                        class="w-full p-2 bg-gradient-to-l from-[#d6a0c7] from-10% to-[#f0e0ec] px-[30px] py-[25px] flex justify-between rounded relative"
                     >
                         <img
                             :src="asset('assets/img/order1/flex-logo1.png')"
@@ -566,7 +586,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 
                 <div class="flex flex-col gap-[30px] w-full">
                     <div
-                        class="w-full p-2 bg-gradient-to-l from-[#e27f91]  from-10% to-[#ebcbd0] px-[30px] py-[25px] flex justify-between rounded relative"
+                        class="w-full p-2 bg-gradient-to-l from-[#e27f91] from-10% to-[#ebcbd0] px-[30px] py-[25px] flex justify-between rounded relative"
                     >
                         <img
                             :src="asset('assets/img/order1/yupoong1.png')"
@@ -739,13 +759,20 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                     >
                         BACK
                     </button>
-                    <button
-                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white"
+                    <a
+                        href="/order2"
+                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white flex justify-center items-center"
                     >
-                        NEXT
-                    </button>
+                        <span class="py-auto">NEXT</span>
+                    </a>
                 </div>
             </div>
         </div>
     </AppLayout>
 </template>
+
+<style>
+.v-collapse {
+    transition: height 300ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+</style>

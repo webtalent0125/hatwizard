@@ -1,5 +1,4 @@
 <script setup>
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import { Head } from "@inertiajs/vue3";
 import AppLayout from "@/Layouts/AppLayout.vue";
 </script>
@@ -44,7 +43,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
-                                :src="asset('assets/img/step/start.png')"
+                                :src="asset('assets/img/step/cap.png')"
                                 class="mr-2"
                                 alt="start"
                             />
@@ -59,7 +58,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
                         >
                             <img
-                                :src="asset('assets/img/step/start.png')"
+                                :src="asset('assets/img/step/vector.png')"
                                 class="mr-2"
                                 alt="start"
                             />
@@ -74,11 +73,13 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
-                                :src="asset('assets/img/step/start.png')"
+                                :src="
+                                    asset('assets/img/step/shopping-card.png')
+                                "
                                 class="mr-2"
                                 alt="start"
                             />
-                            Start
+                            Checkout
                         </div>
                     </div>
                 </div>
@@ -96,7 +97,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 
                     <div class="grid grid-cols-1">
                         <div
-                            class="rounded border border-dashed border-primary bg-white flex justify-center items-center h-[180px]"
+                            class="rounded border border-dashed border-primary bg-white flex justify-center items-center h-[180px] cursor-pointer"
                         >
                             <div>
                                 <img
@@ -282,9 +283,11 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         >
                             <div class="flex justify-between">
                                 <p class="font-bold text-primary">Add-On</p>
+                            </div>
 
-                                <div class="mt-2">
-                                    <div class="flex mt-1">
+                            <div class="mt-2">
+                                <div class="flex justify-between mt-1">
+                                    <div class="flex">
                                         <input
                                             type="image"
                                             :src="
@@ -295,12 +298,12 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                                             alt=""
                                             class="my-auto mr-3"
                                         />
-                                        <div class="flex justify-between">
-                                            <p>Puff embroidery</p>
-                                            <p>$3/hat</p>
-                                        </div>
+                                        <p>Puff embroidery</p>
                                     </div>
-                                    <div class="flex mt-1">
+                                    <p>$3/hat</p>
+                                </div>
+                                <div class="flex justify-between mt-1">
+                                    <div class="flex">
                                         <input
                                             type="image"
                                             :src="
@@ -311,12 +314,12 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                                             alt=""
                                             class="my-auto mr-3"
                                         />
-                                        <div class="flex justify-between">
-                                            <p>Back of hat stitching</p>
-                                            <p>$2/hat</p>
-                                        </div>
+                                        <p>Back of hat stitching</p>
                                     </div>
-                                    <div class="flex mt-1">
+                                    <p>$2/hat</p>
+                                </div>
+                                <div class="flex justify-between mt-1">
+                                    <div class="flex">
                                         <input
                                             type="image"
                                             :src="
@@ -327,11 +330,9 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                                             alt=""
                                             class="my-auto mr-3"
                                         />
-                                        <div class="flex justify-between">
-                                            <p>Specialty threads</p>
-                                            <p>$2/hat</p>
-                                        </div>
+                                        <p>Specialty thread</p>
                                     </div>
+                                    <p>$2/hat</p>
                                 </div>
                             </div>
                         </div>
@@ -342,12 +343,143 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                     <p class="text-xl text-primary font-bold pb-[30px]">
                         Artwork Placement
                     </p>
+
+                    <p class="font-bold">
+                        Select where you would like the artwork placed.
+                    </p>
+                    <p class="mt-2">
+                        <span class="font-bold"> Centered Designs: </span> Our
+                        standard sizing for Centered designs is 2.3" tall and
+                        4.2" wide (while keeping your designs proportions). The
+                        maximum embroidery field size is 6.3" wide by 2.3" tall.
+                    </p>
+                    <p class="mt-2">
+                        <span class="font-bold">Offset Designs: </span> Maximum
+                        2.3" tall and 3" wide. We will use the maximum space we
+                        can on the side panel (while keeping your designs
+                        proportions).
+                    </p>
+                    <p class="text-sm text-gray-400 mt-2">
+                        If you would like different dimensions than our
+                        standards, please let us know in the order notes below.
+                    </p>
+
+                    <div
+                        class="mt-[30px] grid lg:grid-cols-3 grid-cols-1 gap-[30px]"
+                    >
+                        <div
+                            class="rounded-md bg-white p-10 flex justify-center items-center relative border border-primary border-solid"
+                        >
+                            <div>
+                                <div class="relative">
+                                    <img
+                                        :src="
+                                            asset(
+                                                'assets/img/order2/Ресурс1.png'
+                                            )
+                                        "
+                                        alt=""
+                                    />
+                                    <div
+                                        class="uppercase rounded-full h-[35px] w-[35px] border border-primary border-dashed text-primary absolute top-[45px] left-[10px] text-[8px] font-bold flex justify-center items-center"
+                                    >
+                                        LEFT
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-primary font-bold text-center mt-4"
+                                >
+                                    Right Eye
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-md bg-white p-10 flex justify-center items-center relative"
+                        >
+                            <div>
+                                <div class="relative">
+                                    <img
+                                        :src="
+                                            asset(
+                                                'assets/img/order2/Ресурс1.png'
+                                            )
+                                        "
+                                        alt=""
+                                    />
+                                    <div
+                                        class="uppercase rounded-full h-[35px] w-[35px] border border-primary border-dashed text-primary absolute top-[40px] left-[50%] -translate-x-[50%] text-[8px] font-bold flex justify-center items-center"
+                                    >
+                                        Center
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-primary font-bold text-center mt-4"
+                                >
+                                    Centered
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-md bg-white p-10 flex justify-center items-center relative"
+                        >
+                            <div>
+                                <div class="relative">
+                                    <img
+                                        :src="
+                                            asset(
+                                                'assets/img/order2/Ресурс1.png'
+                                            )
+                                        "
+                                        alt=""
+                                    />
+                                    <div
+                                        class="uppercase rounded-full h-[35px] w-[35px] border border-primary border-dashed text-primary absolute top-[45px] right-[10px] text-[8px] font-bold flex justify-center items-center"
+                                    >
+                                        right
+                                    </div>
+                                </div>
+                                <p
+                                    class="text-primary font-bold text-center mt-4"
+                                >
+                                    Left Eye
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="bg-primary bg-opacity-5 rounded p-10">
                     <p class="text-xl text-primary font-bold pb-[30px]">
                         Design Details
                     </p>
+                    <p class="mt-5 font-bold">
+                        We'll match thread colours to your logo colours.
+                        Otherwise specify any changes down below.
+                    </p>
+                    <div class="rounded bg-white mt-5 p-[30px]">
+                        <textarea
+                            placeholder="Type your orders notes..."
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="5"
+                            class="outline-none w-full border-none focus:outline-none rounded"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-[60px]">
+                    <a
+                        href="/order1"
+                        class="text-center text-primary h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary bg-opacity-5 flex justify-center items-center"
+                    >
+                        <span class="py-auto">BACK</span>
+                    </a>
+                    <button
+                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white"
+                    >
+                        NEXT
+                    </button>
                 </div>
             </div>
         </div>
