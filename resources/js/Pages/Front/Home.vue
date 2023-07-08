@@ -11,8 +11,11 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
     <Head title="Home" />
 
     <AppLayout>
-        <div class="bg-primary0">
-            <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+        <div class="bg-primary0 relative">
+            <img :src="asset('assets/img/hero_1.png')" alt="" class="absolute top-0 left-0">
+            <img :src="asset('assets/img/hero_2.png')" alt="" class="absolute bottom-0 right-0">
+
+            <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40 z-10">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
                     <div class="uppercase py-1 leading-6 text-primary2 font-erica-one text-3xl">
                         Custom Hats
@@ -26,7 +29,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
                 </div>
                 <div class="relative mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
                     <div class="bg-white rounded-full inset-0 absolute z-10 m-[5px]"></div>
-                    <img :src="asset('assets/img/head.png')" alt="" class="w-full absolute z-20 inset-0 -translate-x-[50px] -translate-y-[20px]" />
+                    <img :src="asset('assets/img/head.png')" alt="" class="w-full absolute z-20 inset-0 -translate-x-[20px] -translate-y-[10px] md:-translate-x-[50px] md:-translate-y-[20px]" />
                     <img :src="asset('assets/img/head.png')" alt="" class="w-full opacity-0" />
                 </div>
             </div>
