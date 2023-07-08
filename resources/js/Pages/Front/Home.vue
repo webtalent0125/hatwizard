@@ -14,7 +14,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
         <div class="bg-primary0">
             <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
                 <div class="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-                    <div class="uppercase py-1 text-sm leading-6 text-primary2 font-erica-one text-3xl">
+                    <div class="uppercase py-1 leading-6 text-primary2 font-erica-one text-3xl">
                         Custom Hats
                     </div>
                     <div class="mt-4">
@@ -37,7 +37,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
                     <img :src="asset('assets/img/hero_3.png')" alt="" />
                 </div>
                 <div class="py-8 mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-                    <div class="uppercase py-1 text-sm leading-6 text-primary2 font-erica-one text-3xl">
+                    <div class="uppercase py-1 leading-6 text-primary2 font-erica-one text-3xl">
                         About Hat Wizard
                     </div>
                     <div class="mt-6 text-sm">
