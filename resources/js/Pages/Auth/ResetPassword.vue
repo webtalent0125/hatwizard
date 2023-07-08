@@ -1,10 +1,8 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/vue3';
+import AuthLayout from "@/Layouts/AuthLayout.vue";
 
 const props = defineProps({
     email: {
@@ -32,13 +30,15 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+    <AuthLayout>
         <Head title="Reset Password" />
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
+        <div class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl mb-8">
+            Reset your password
+        </div>
 
+        <form @submit.prevent="submit" class="max-w-md">
+            <div>
                 <TextInput
                     id="email"
                     type="email"
@@ -47,14 +47,13 @@ const submit = () => {
                     required
                     autofocus
                     autocomplete="username"
+                    placeholder="Email address"
                 />
 
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-
+            <div class="mt-6">
                 <TextInput
                     id="password"
                     type="password"
@@ -62,14 +61,13 @@ const submit = () => {
                     v-model="form.password"
                     required
                     autocomplete="new-password"
+                    placeholder="Password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
-
+            <div class="mt-6">
                 <TextInput
                     id="password_confirmation"
                     type="password"
@@ -77,16 +75,17 @@ const submit = () => {
                     v-model="form.password_confirmation"
                     required
                     autocomplete="new-password"
+                    placeholder="Confirm Password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <button class="rounded-full w-full bg-white py-2 font-erica-one text-2xl uppercase text-primary shadow-xl" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Reset Password
-                </PrimaryButton>
+                </button>
             </div>
         </form>
-    </GuestLayout>
+    </AuthLayout>
 </template>

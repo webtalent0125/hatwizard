@@ -5,12 +5,15 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import AuthLayout from "@/Layouts/AuthLayout.vue";
+import Checkbox from "@/Components/Checkbox.vue";
 
 const form = useForm({
     name: '',
     email: '',
     password: '',
     password_confirmation: '',
+    accept: false,
 });
 
 const submit = () => {
@@ -21,13 +24,15 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
+    <AuthLayout>
         <Head title="Register" />
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
+        <div class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl mb-8">
+            Signup
+        </div>
 
+        <form @submit.prevent="submit" class="max-w-md">
+            <div>
                 <TextInput
                     id="name"
                     type="text"
@@ -36,28 +41,27 @@ const submit = () => {
                     required
                     autofocus
                     autocomplete="name"
+                    placeholder="Username"
                 />
 
                 <InputError class="mt-2" :message="form.errors.name" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-
+            <div class="mt-6">
                 <TextInput
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
                     v-model="form.email"
                     required
-                    autocomplete="username"
+                    autocomplete="email"
+                    placeholder="Email address"
                 />
 
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+            <div class="mt-6">
 
                 <TextInput
                     id="password"
@@ -66,13 +70,13 @@ const submit = () => {
                     v-model="form.password"
                     required
                     autocomplete="new-password"
+                    placeholder="Password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+            <div class="mt-6">
 
                 <TextInput
                     id="password_confirmation"
@@ -81,23 +85,34 @@ const submit = () => {
                     v-model="form.password_confirmation"
                     required
                     autocomplete="new-password"
+                    placeholder="Confirm Password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex w-full justify-between mt-6">
+                <label class="flex items-center">
+                    <Checkbox name="accept" v-model:checked="form.accept" />
+                    <span class="ml-2 text-sm text-gray-600">I accept the <Link :href="route('terms')" class="text-sm text-primary hover:text-primary2 ml-0">Terms and Conditions</Link></span>
+                </label>
+            </div>
+
+            <div class="w-full mt-6">
+                <button class="rounded-full w-full bg-white py-2 font-erica-one text-2xl uppercase text-primary shadow-xl" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Sign Up
+                </button>
+            </div>
+
+            <div class="flex mt-6 justify-center items-center">
+                Already have an account?
                 <Link
                     :href="route('login')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="text-sm text-primary hover:text-primary2 ml-2"
                 >
-                    Already registered?
+                    Login
                 </Link>
-
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
+    </AuthLayout>
 </template>
