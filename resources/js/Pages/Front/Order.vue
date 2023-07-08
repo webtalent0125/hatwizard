@@ -1,10 +1,10 @@
 <script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Partners from "@/Components/Partners.vue";
 import HatsRow from "@/Components/HatsRow.vue";
 import Reviews from "@/Components/Reviews.vue";
+import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -39,9 +39,9 @@ import Reviews from "@/Components/Reviews.vue";
                         </li>
                     </ul>
 
-                    <button class="rounded-full w-64 mt-6 bg-white py-2 font-erica-one text-2xl uppercase text-primary shadow-xl">
+                    <Link :href="route('order.start')" class="flex w-64 justify-center rounded-full mt-6 bg-white py-2 font-erica-one text-2xl uppercase text-primary shadow-xl">
                         Get Started
-                    </button>
+                    </Link>
                 </div>
                 <div class="rounded-2xl bg-primary2 px-8 py-10">
                     <div class="uppercase py-1 leading-6 text-white font-erica-one text-3xl">
@@ -59,9 +59,9 @@ import Reviews from "@/Components/Reviews.vue";
                         </li>
                     </ul>
 
-                    <button class="rounded-full w-64 mt-6 bg-white py-2 font-erica-one text-2xl uppercase text-primary shadow-xl">
+                    <Link :href="route('order.start')" class="flex w-64 justify-center  rounded-full mt-6 bg-white py-2 font-erica-one text-2xl uppercase text-primary shadow-xl">
                         Get Started
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

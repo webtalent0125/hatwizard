@@ -18,8 +18,9 @@ use Inertia\Inertia;
 
 Route::get('/', [\App\Http\Controllers\FrontController::class, 'index'])->name('home');
 Route::get('/order', [\App\Http\Controllers\FrontController::class, 'order'])->name('order');
-Route::get('/order1', [\App\Http\Controllers\FrontController::class, 'order1'])->name('order');
-Route::get('/order2', [\App\Http\Controllers\FrontController::class, 'order2'])->name('order');
+Route::get('/order/start', [\App\Http\Controllers\FrontController::class, 'orderStart'])->name('order.start');
+Route::get('/order/upload', [\App\Http\Controllers\FrontController::class, 'orderUpload'])->name('order.upload');
+Route::get('/order/checkout', [\App\Http\Controllers\FrontController::class, 'orderCheckout'])->name('order.checkout');
 Route::get('/order/status', [\App\Http\Controllers\FrontController::class, 'orderStatus'])->name('order.status');
 Route::get('/about', [\App\Http\Controllers\FrontController::class, 'about'])->name('about');
 Route::get('/faq', [\App\Http\Controllers\FrontController::class, 'faq'])->name('faq');

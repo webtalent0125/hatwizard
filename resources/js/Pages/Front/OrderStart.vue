@@ -760,7 +760,7 @@ const isExpanded = ref(false);
                         BACK
                     </button>
                     <a
-                        href="/order2"
+                        href="/order/upload"
                         class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white flex justify-center items-center"
                     >
                         <span class="py-auto">NEXT</span>
