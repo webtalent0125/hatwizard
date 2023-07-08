@@ -103,7 +103,7 @@ const navigation = {
                         <h3 class="text-sm font-semibold leading-6 text-white">Hat Wizard</h3>
                         <ul role="list" class="mt-6 space-y-2">
                             <li v-for="item in navigation.solutions" :key="item.name">
-                                <Link :href="item.href" class="text-sm leading-6 text-gray-200 hover:text-white">{{ item.name }}</Link>
+                                <Link :href="item.href" class="text-sm leading-6 text-gray-200 hover:text-primary2">{{ item.name }}</Link>
                             </li>
                         </ul>
                     </div>
@@ -111,18 +111,18 @@ const navigation = {
                         <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
                         <ul role="list" class="mt-6 space-y-2">
                             <li v-for="item in navigation.support" :key="item.name">
-                                <Link :href="item.href" class="text-sm leading-6 text-gray-200 hover:text-white">{{ item.name }}</Link>
+                                <Link :href="item.href" class="text-sm leading-6 text-gray-200 hover:text-primary2">{{ item.name }}</Link>
                             </li>
                         </ul>
                     </div>
                     <div class="mt-10 md:mt-0">
                         <h3 class="text-sm font-semibold leading-6 text-white">Contact</h3>
                         <div role="list" class="mt-6 space-y-2">
-                            <p class="text-sm leading-6 text-gray-200">Phone: <a href="tel:+19038691493">903-869-1493</a></p>
-                            <p class="text-sm leading-6 text-gray-200">Email: <a href="mailto:info@hatwizard.com">info@hatwizard.com</a></p>
+                            <p class="text-sm leading-6 text-gray-200">Phone: <a href="tel:+19038691493" class="hover:text-primary2">903-869-1493</a></p>
+                            <p class="text-sm leading-6 text-gray-200">Email: <a href="mailto:info@hatwizard.com" class="hover:text-primary2">info@hatwizard.com</a></p>
                         </div>
                         <div class="flex space-x-6 mt-6">
-                            <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-200 hover:text-white">
+                            <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-200 hover:text-primary2">
                                 <span class="sr-only">{{ item.name }}</span>
                                 <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
                             </a>
