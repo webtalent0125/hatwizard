@@ -21,13 +21,10 @@ import AppLayout from "@/Layouts/AppLayout.vue";
         <div class="bg-white">
             <div class="mx-auto max-w-7xl px-6 py-16 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
                 <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-                    <img :src="asset('assets/img/hero_3.png')" alt="" />
+                    <img :src="asset('assets/img/about.png')" alt="" />
                 </div>
-                <div class="py-8 mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-                    <div class="uppercase py-1 leading-6 text-primary2 font-erica-one text-3xl">
-                        About Hat Wizard
-                    </div>
-                    <div class="mt-6 text-sm">
+                <div class="py-2 mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+                    <div class="mt-0 text-sm">
                         <p class="mb-6">
                             Welcome to Hat Wizard, your premier destination for top-quality hat embroidery in Georgia, USA. We take pride in offering a wide range of beautifully crafted embroidered hats that add a touch of style and personality to any outfit.
                         </p>
