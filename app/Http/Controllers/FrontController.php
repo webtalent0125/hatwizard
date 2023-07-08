@@ -15,6 +15,16 @@ class FrontController extends Controller
     {
         return Inertia::render('Front/Order');
     }
+
+    public function order1()
+    {
+        return Inertia::render('Front/Order1');
+    }
+
+    public function order2()
+    {
+        return Inertia::render('Front/Order2');
+    }
     public function orderStatus()
     {
         return Inertia::render('Front/OrderStatus');

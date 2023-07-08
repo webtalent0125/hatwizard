@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "laravel-vapor": "^0.6.0",
-        "moment": "^2.29.4"
+        "moment": "^2.29.4",
+        "vue-collapsed": "^1.1.3"
     }
 }
