@@ -18,6 +18,7 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "@chenfengyuan/vue-number-input": "^2.0.1",
         "@headlessui/vue": "^1.7.14",
         "@heroicons/vue": "^2.0.18",
         "laravel-vapor": "^0.6.0",

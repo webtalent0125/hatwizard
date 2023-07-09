@@ -89,7 +89,6 @@ const isExpanded = ref(false);
                 </div>
             </div>
         </div>
-
         <div class="bg-white">
             <div
                 class="mx-auto max-w-8xl px-6 py-16 sm:py-24 flex flex-col gap-[70px] w-full"
@@ -133,6 +132,7 @@ const isExpanded = ref(false);
                         <button class="cursor-pointer my-auto">
                             <img
                                 :src="asset('assets/img/order1/arrowUp.png')"
+                                :class="'transition ease ease-out my-auto ' + (isExpanded && ' rotate-180')"
                                 alt=""
                             />
                         </button>
@@ -239,7 +239,7 @@ const isExpanded = ref(false);
                                         <div
                                             class="bg-white rounded text-center p-[10px]"
                                         >
-                                            $$15
+                                            $15
                                         </div>
                                     </div>
                                 </div>
@@ -269,24 +269,12 @@ const isExpanded = ref(false);
                                             />
                                             <span class="my-auto">Black</span>
                                         </div>
-                                        <div
-                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                        >
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                class="focus:outline-none w-[50px] text-center"
-                                                placeholder="0"
-                                            />
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
                                     </div>
                                     <div class="flex justify-between">
                                         <div class="flex">
@@ -301,24 +289,12 @@ const isExpanded = ref(false);
                                             />
                                             <span class="my-auto">Black</span>
                                         </div>
-                                        <div
-                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                        >
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                class="focus:outline-none w-[50px] text-center"
-                                                placeholder="0"
-                                            />
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
                                     </div>
                                     <div class="flex justify-between">
                                         <div class="flex">
@@ -333,29 +309,17 @@ const isExpanded = ref(false);
                                             />
                                             <span class="my-auto">Black</span>
                                         </div>
-                                        <div
-                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                        >
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                class="focus:outline-none w-[50px] text-center"
-                                                placeholder="0"
-                                            />
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
                                     </div>
                                 </div>
                             </div>
                             <div class="p-[10px]">
-                                <p class="text-left">OSFA</p>
+                                <p class="text-right">OSFA</p>
                                 <div class="flex flex-col gap-[30px]">
                                     <div class="flex justify-between">
                                         <div class="flex">
@@ -370,24 +334,12 @@ const isExpanded = ref(false);
                                             />
                                             <span class="my-auto">Black</span>
                                         </div>
-                                        <div
-                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                        >
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                class="focus:outline-none w-[50px] text-center"
-                                                placeholder="0"
-                                            />
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
                                     </div>
                                     <div class="flex justify-between">
                                         <div class="flex">
@@ -402,24 +354,12 @@ const isExpanded = ref(false);
                                             />
                                             <span class="my-auto">Black</span>
                                         </div>
-                                        <div
-                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                        >
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                class="focus:outline-none w-[50px] text-center"
-                                                placeholder="0"
-                                            />
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
                                     </div>
                                     <div class="flex justify-between">
                                         <div class="flex">
@@ -434,24 +374,12 @@ const isExpanded = ref(false);
                                             />
                                             <span class="my-auto">Black</span>
                                         </div>
-                                        <div
-                                            class="border border-gray-300 rounded-full h-8 w-[100px] my-auto flex justify-between"
-                                        >
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                -
-                                            </button>
-                                            <input
-                                                class="focus:outline-none w-[50px] text-center"
-                                                placeholder="0"
-                                            />
-                                            <button
-                                                class="cursor-pointer w-[25px] px-1"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
                                     </div>
                                 </div>
                             </div>
@@ -774,5 +702,25 @@ const isExpanded = ref(false);
 <style>
 .v-collapse {
     transition: height 300ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+.vue-number-input__input {
+    margin-top: 3px;
+    padding: 0px !important;
+    text-align: center;
+    border: none !important;
+    outline: none !important;
+}
+.vue-number-input__button {
+    border: none !important;
+}
+.vue-number-input__button--plus {
+    width: 15px !important;
+    margin-right: 7px !important;
+    height: 16px !important;
+    margin-top: 5px !important;
+}
+.vue-number-input__button--minus {
+    width: 10px !important;
+    margin-left: 7px !important;
 }
 </style>
