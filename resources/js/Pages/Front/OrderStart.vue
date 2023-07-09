@@ -18,10 +18,10 @@ const isExpandedMade = ref(false);
             <img
                 :src="asset('assets/img/hero_1.png')"
                 alt=""
-                class="absolute top-0 left-0"
+                class="absolute top-0 left-0 z-0"
             />
 
-            <div class="mx-auto w-full px-6 py-16 sm:py-32 text-center">
+            <div class="mx-auto w-full px-6 py-16 sm:py-32 text-center relative z-10">
                 <div
                     class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl"
                 >
@@ -32,7 +32,7 @@ const isExpandedMade = ref(false);
                         class="grid lg:flex lg:justify-between sm:grid-cols-2 grid-cols-1 gap-4"
                     >
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary"
                         >
                             <img
                                 :src="asset('assets/img/step/start.png')"
@@ -47,7 +47,7 @@ const isExpandedMade = ref(false);
                             alt="start"
                         />
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
                         >
                             <img
                                 :src="asset('assets/img/step/Selectedcap.png')"
@@ -62,7 +62,7 @@ const isExpandedMade = ref(false);
                             alt="start"
                         />
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
                                 :src="asset('assets/img/step/vector1.png')"
@@ -77,7 +77,7 @@ const isExpandedMade = ref(false);
                             alt="start"
                         />
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
                                 :src="
@@ -137,7 +137,7 @@ const isExpandedMade = ref(false);
                                 :src="asset('assets/img/order1/arrowUp.png')"
                                 :class="
                                     'transition ease ease-out my-auto ' +
-                                    (isExpanded && ' rotate-180')
+                                    (!isExpanded && ' rotate-180')
                                 "
                                 alt=""
                             />
@@ -434,7 +434,7 @@ const isExpandedMade = ref(false);
                                 :src="asset('assets/img/order1/arrowUp.png')"
                                 :class="
                                     'transition ease ease-out my-auto ' +
-                                    (isExpandedFlexit && ' rotate-180')
+                                    (!isExpandedFlexit && ' rotate-180')
                                 "
                                 alt=""
                             />
@@ -731,7 +731,7 @@ const isExpandedMade = ref(false);
                                 :src="asset('assets/img/order1/arrowUp.png')"
                                 :class="
                                     'transition ease ease-out my-auto ' +
-                                    (isExpandedYoopong && ' rotate-180')
+                                    (!isExpandedYoopong && ' rotate-180')
                                 "
                                 alt=""
                             />
@@ -1028,7 +1028,7 @@ const isExpandedMade = ref(false);
                                 :src="asset('assets/img/order1/arrowUp.png')"
                                 :class="
                                     'transition ease ease-out my-auto ' +
-                                    (isExpandedMade && ' rotate-180')
+                                    (!isExpandedMade && ' rotate-180')
                                 "
                                 alt=""
                             />

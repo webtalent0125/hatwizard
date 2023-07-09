@@ -14,7 +14,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                 class="absolute top-0 left-0"
             />
 
-            <div class="mx-auto w-full px-6 py-16 sm:py-32 text-center">
+            <div class="mx-auto w-full px-6 py-16 sm:py-32 text-center relative z-10">
                 <div
                     class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl"
                 >
@@ -25,7 +25,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         class="grid lg:flex lg:justify-between sm:grid-cols-2 grid-cols-1 gap-4"
                     >
                         <div
-                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary"
                         >
                             <img
                                 :src="asset('assets/img/step/start.png')"
@@ -40,7 +40,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             alt="start"
                         />
                         <div
-                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
                                 :src="asset('assets/img/step/cap.png')"
@@ -55,7 +55,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             alt="start"
                         />
                         <div
-                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
                         >
                             <img
                                 :src="asset('assets/img/step/vector.png')"
@@ -70,7 +70,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             alt="start"
                         />
                         <div
-                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
+                            class="hover:bg-gray-100 cursor-pointer transition ease ease-in rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
                                 :src="
