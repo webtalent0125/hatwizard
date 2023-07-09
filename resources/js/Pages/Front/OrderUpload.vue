@@ -1,7 +1,22 @@
 <script setup>
 import { Head } from "@inertiajs/vue3";
 import AppLayout from "@/Layouts/AppLayout.vue";
+import Dropzone from "@/Components/Dropzone.vue";
+import { ref } from "vue";
+
+const artwork = ref(false);
+const artworkPlacement = ref(Number(1));
+
+function handleCnageArtworkSetup(state) {
+    artwork.value = state;
+}
+
+function changeArtworkPlacement(state) {
+    artworkPlacement.value = state;
+}
 </script>
+
+<script></script>
 
 <template>
     <Head title="Order page 1" />
@@ -14,7 +29,9 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                 class="absolute top-0 left-0"
             />
 
-            <div class="mx-auto w-full px-6 py-16 sm:py-32 text-center relative z-10">
+            <div
+                class="mx-auto w-full px-6 py-16 sm:py-32 text-center relative z-10"
+            >
                 <div
                     class="uppercase py-1 leading-6 text-primary font-erica-one text-3xl"
                 >
@@ -88,114 +105,11 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 
         <div class="bg-white">
             <div
-                class="mx-auto max-w-8xl px-6 py-16 sm:py-24 flex flex-col gap-[30px] w-full"
+                class="mx-auto max-w-8xl px-3 md:px-6 py-16 sm:py-24 flex flex-col gap-[30px] w-full"
             >
-                <div class="bg-primary bg-opacity-5 rounded p-10">
-                    <p class="text-xl text-primary font-bold pb-[30px]">
-                        Please Upload Your Artwork
-                    </p>
+                <Dropzone />
 
-                    <div class="grid grid-cols-1">
-                        <div
-                            class="rounded border border-dashed border-primary bg-white flex justify-center items-center h-[180px] cursor-pointer"
-                        >
-                            <div>
-                                <img
-                                    :src="asset('assets/img/order2/upload.png')"
-                                    class="h-[60px] w-[60px] mx-auto mb-3"
-                                    alt=""
-                                />
-                                <p>
-                                    <span class="text-primary font-bold"
-                                        >Choose</span
-                                    >
-                                    file or drag it here
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-6 grid-cols-2 mt-2 gap-2"
-                    >
-                        <div
-                            class="relative bg-white rounded p-2 max-h-[100px] max-w-[100px]"
-                        >
-                            <img
-                                :src="asset('assets/img/order2/upload1.png')"
-                                class="mx-auto object-contain w-full h-full"
-                                alt=""
-                            />
-                            <span
-                                class="absolute bg-gray-300 rounded-full p-1 top-1 right-1 cursor-pointer h-[20px] w-[20px] text-white flex justify-center items-center text-[12px]"
-                                >X</span
-                            >
-                        </div>
-                        <div
-                            class="relative bg-white rounded p-2 max-h-[100px] max-w-[100px]"
-                        >
-                            <img
-                                :src="asset('assets/img/order2/upload1.png')"
-                                class="mx-auto object-contain w-full h-full"
-                                alt=""
-                            />
-                            <span
-                                class="absolute bg-gray-300 rounded-full p-1 top-1 right-1 cursor-pointer h-[20px] w-[20px] text-white flex justify-center items-center text-[12px]"
-                                >X</span
-                            >
-                        </div>
-                        <div
-                            class="relative bg-white rounded p-2 max-h-[100px] max-w-[100px]"
-                        >
-                            <img
-                                :src="asset('assets/img/order2/upload1.png')"
-                                class="mx-auto object-contain w-full h-full"
-                                alt=""
-                            />
-                            <span
-                                class="absolute bg-gray-300 rounded-full p-1 top-1 right-1 cursor-pointer h-[20px] w-[20px] text-white flex justify-center items-center text-[12px]"
-                                >X</span
-                            >
-                        </div>
-                        <div
-                            class="relative bg-white rounded p-2 max-h-[100px] max-w-[100px]"
-                        >
-                            <img
-                                :src="asset('assets/img/order2/upload1.png')"
-                                class="mx-auto object-contain w-full h-full"
-                                alt=""
-                            />
-                            <span
-                                class="absolute bg-gray-300 rounded-full p-1 top-1 right-1 cursor-pointer h-[20px] w-[20px] text-white flex justify-center items-center text-[12px]"
-                                >X</span
-                            >
-                        </div>
-                    </div>
-
-                    <div class="mt-5">
-                        <p>
-                            Orders are submitted as standard 2D embroidery. 3D
-                            Puff embroidery is an extra $5 per hat and is only
-                            possible on some designs and is billed separately.
-                        </p>
-                        <p class="mt-2">
-                            Please keep in mind that really small details do not
-                            work well for embroidery. Very small text and
-                            details will need to be removed from some designs.
-                            LESS IS MORE when it comes to embroidery designs.
-                        </p>
-                    </div>
-
-                    <div class="flex mt-5">
-                        <input type="checkbox" class="my-auto mr-2" />
-                        <p class="font-bold">
-                            I OWN THE RIGHTS TO THE ARTWORK BEING USED OR HAVE
-                            PERMISSION FROM THE OWNER TO USE IT
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-primary bg-opacity-5 rounded p-10">
+                <div class="bg-primary bg-opacity-5 rounded px-5 py-10 md:p-10">
                     <p class="text-xl text-primary font-bold pb-[30px]">
                         Artwork Setup
                     </p>
@@ -220,7 +134,13 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         class="mt-5 grid lg:grid-cols-2 grid-cols-1 gap-[30px]"
                     >
                         <div
-                            class="border border-primary border-solid rounded bg-white p-[30px] relative"
+                            :class="
+                                'border border-solid rounded bg-white p-[30px] relative cursor-pointer hover:border-primary' +
+                                (artwork
+                                    ? ' border-primary'
+                                    : ' border-white hover:border-opacity-40')
+                            "
+                            @click="handleCnageArtworkSetup(true)"
                         >
                             <div class="flex justify-between">
                                 <p class="font-bold text-primary">
@@ -271,15 +191,23 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             <p class="mt-2 text-sm font-semibold">
                                 *FREE if ordering 12 or more hats
                             </p>
-                            <input
+
+                            <img
+                                :hidden="!artwork"
                                 type="image"
                                 :src="asset('assets/img/order2/checkBig.png')"
                                 alt=""
-                                class="absolute h-[36px] w-[36px] bottom-[20px] right-[20px]"
+                                class="absolute h-[36px] w-[36px] bottom-[15px] right-[15px] trnasition ease ease-out"
                             />
                         </div>
                         <div
-                            class="border border-white border-solid rounded bg-white p-[30px]"
+                            :class="
+                                'border border-solid rounded hover:border-primary bg-white p-[30px] cursor-pointer relative' +
+                                (!artwork
+                                    ? ' border-primary'
+                                    : '  border-white hover:border-opacity-40')
+                            "
+                            @click="handleCnageArtworkSetup(false)"
                         >
                             <div class="flex justify-between">
                                 <p class="font-bold text-primary">Add-On</p>
@@ -288,58 +216,74 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             <div class="mt-2">
                                 <div class="flex justify-between mt-1">
                                     <div class="flex">
-                                        <input
-                                            type="image"
-                                            :src="
-                                                asset(
-                                                    'assets/img/order2/switch.png'
-                                                )
-                                            "
-                                            alt=""
-                                            class="my-auto mr-3"
-                                        />
+                                        <label
+                                            class="relative inline-flex items-center mb-1 mr-2 cursor-pointer"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                value=""
+                                                class="sr-only peer"
+                                            />
+                                            <div
+                                                class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:bg-primary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
+                                            ></div>
+                                        </label>
                                         <p>Puff embroidery</p>
                                     </div>
                                     <p>$3/hat</p>
                                 </div>
                                 <div class="flex justify-between mt-1">
                                     <div class="flex">
-                                        <input
-                                            type="image"
-                                            :src="
-                                                asset(
-                                                    'assets/img/order2/switchnone.png'
-                                                )
-                                            "
-                                            alt=""
-                                            class="my-auto mr-3"
-                                        />
+                                        <label
+                                            class="relative inline-flex items-center mb-1 mr-2 cursor-pointer"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                value=""
+                                                class="sr-only peer"
+                                            />
+                                            <div
+                                                class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:bg-primary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
+                                            ></div>
+                                        </label>
                                         <p>Back of hat stitching</p>
                                     </div>
                                     <p>$2/hat</p>
                                 </div>
                                 <div class="flex justify-between mt-1">
                                     <div class="flex">
-                                        <input
-                                            type="image"
-                                            :src="
-                                                asset(
-                                                    'assets/img/order2/switchnone.png'
-                                                )
-                                            "
-                                            alt=""
-                                            class="my-auto mr-3"
-                                        />
+                                        <label
+                                            class="relative inline-flex items-center mb-1 mr-2 cursor-pointer"
+                                        >
+                                            <input
+                                                type="checkbox"
+                                                value=""
+                                                class="sr-only peer"
+                                            />
+                                            <div
+                                                class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:bg-primary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-primary"
+                                            ></div>
+                                        </label>
                                         <p>Specialty thread</p>
                                     </div>
                                     <p>$2/hat</p>
                                 </div>
                             </div>
+
+                            <img
+                                :hidden="artwork"
+                                type="image"
+                                :src="asset('assets/img/order2/checkBig.png')"
+                                alt=""
+                                class="absolute h-[36px] w-[36px] bottom-[15px] right-[15px] trnasition ease ease-out"
+                            />
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-primary bg-opacity-5 rounded p-10">
+                <div
+                    class="bg-primary bg-opacity-5 rounded py-10 px-5 md:px-10"
+                >
                     <p class="text-xl text-primary font-bold pb-[30px]">
                         Artwork Placement
                     </p>
@@ -368,7 +312,13 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         class="mt-[30px] grid lg:grid-cols-3 grid-cols-1 gap-[30px]"
                     >
                         <div
-                            class="rounded-md bg-white p-10 flex justify-center items-center relative border border-primary border-solid"
+                            @click="changeArtworkPlacement(1)"
+                            :class="
+                                'rounded-md bg-white p-10 flex justify-center items-center relative border border-solid hover:border-primary cursor-pointer' +
+                                (artworkPlacement === Number(1)
+                                    ? ' border-primary'
+                                    : ' border-white hover:border-opacity-40')
+                            "
                         >
                             <div>
                                 <div class="relative">
@@ -394,7 +344,13 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             </div>
                         </div>
                         <div
-                            class="rounded-md bg-white p-10 flex justify-center items-center relative"
+                            @click="changeArtworkPlacement(2)"
+                            :class="
+                                'rounded-md bg-white p-10 flex justify-center items-center relative border hover:border-primary cursor-pointer' +
+                                (artworkPlacement === Number(2)
+                                    ? ' border-primary'
+                                    : ' border-white hover:border-opacity-40')
+                            "
                         >
                             <div>
                                 <div class="relative">
@@ -420,7 +376,13 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             </div>
                         </div>
                         <div
-                            class="rounded-md bg-white p-10 flex justify-center items-center relative"
+                            @click="changeArtworkPlacement(3)"
+                            :class="
+                                'rounded-md bg-white p-10 flex justify-center items-center relative border hover:border-primary cursor-pointer' +
+                                (artworkPlacement === Number(3)
+                                    ? ' border-primary'
+                                    : ' border-white hover:border-opacity-40')
+                            "
                         >
                             <div>
                                 <div class="relative">
@@ -448,7 +410,9 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                     </div>
                 </div>
 
-                <div class="bg-primary bg-opacity-5 rounded p-10">
+                <div
+                    class="bg-primary bg-opacity-5 rounded py-10 px-5 md:px-10"
+                >
                     <p class="text-xl text-primary font-bold pb-[30px]">
                         Design Details
                     </p>
@@ -456,7 +420,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         We'll match thread colours to your logo colours.
                         Otherwise specify any changes down below.
                     </p>
-                    <div class="rounded bg-white mt-5 p-[30px]">
+                    <div class="rounded bg-white mt-5 p-2 md:p-[30px]">
                         <textarea
                             placeholder="Type your orders notes..."
                             name=""
