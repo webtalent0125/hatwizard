@@ -5,6 +5,9 @@ import { ref } from "vue";
 import { Collapse } from "vue-collapsed";
 
 const isExpanded = ref(false);
+const isExpandedFlexit = ref(false);
+const isExpandedYoopong = ref(false);
+const isExpandedMade = ref(false);
 </script>
 
 <template>
@@ -132,7 +135,10 @@ const isExpanded = ref(false);
                         <button class="cursor-pointer my-auto">
                             <img
                                 :src="asset('assets/img/order1/arrowUp.png')"
-                                :class="'transition ease ease-out my-auto ' + (isExpanded && ' rotate-180')"
+                                :class="
+                                    'transition ease ease-out my-auto ' +
+                                    (isExpanded && ' rotate-180')
+                                "
                                 alt=""
                             />
                         </button>
@@ -404,7 +410,8 @@ const isExpanded = ref(false);
                     </div>
 
                     <div
-                        class="w-full flex justify-between border-b border-gray-300"
+                        class="w-full flex justify-between cursor-pointer"
+                        @click="isExpandedFlexit = !isExpandedFlexit"
                     >
                         <div class="flex">
                             <img
@@ -425,91 +432,262 @@ const isExpanded = ref(false);
                         <button class="cursor-pointer my-auto">
                             <img
                                 :src="asset('assets/img/order1/arrowUp.png')"
+                                :class="
+                                    'transition ease ease-out my-auto ' +
+                                    (isExpandedFlexit && ' rotate-180')
+                                "
                                 alt=""
                             />
                         </button>
                     </div>
 
-                    <div
-                        class="w-full flex justify-between border-b border-gray-300"
-                    >
-                        <div class="flex">
-                            <img
-                                :src="asset('assets/img/order1/image2.png')"
-                                class="h-[100px]"
-                                alt=""
-                            />
-                            <div class="my-auto">
-                                <p class="text-primary font-bold">
-                                    112 Trucker Snapback
-                                </p>
-                                <span
-                                    >The Ultimate Blend of Style and
-                                    Comfort</span
+                    <Collapse :when="isExpandedFlexit" class="v-collapse">
+                        <div class="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
+                            >
+                                <p
+                                    class="font-semibold text-center p-[10px] text-primary"
                                 >
+                                    One Size
+                                </p>
+                                <div
+                                    class="bg-white rounded text-center p-[10px]"
+                                >
+                                    7” - 7 3/4”
+                                </div>
                             </div>
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
+                            >
+                                <div class="grid grid-cols-7 gap-2">
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            1-6
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $22
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            7-23
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $20
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            24
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $19
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            48
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $18
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            96
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $17
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            144
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $16
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            288+
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $15
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                            <p class="text-gray-400 text-right text-sm">
+                                Price includes decoration
+                            </p>
                         </div>
-                        <button class="cursor-pointer my-auto">
-                            <img
-                                :src="asset('assets/img/order1/arrowUp.png')"
-                                alt=""
-                            />
-                        </button>
-                    </div>
 
-                    <div
-                        class="w-full flex justify-between border-b border-gray-300"
-                    >
-                        <div class="flex">
-                            <img
-                                :src="asset('assets/img/order1/image2.png')"
-                                class="h-[100px]"
-                                alt=""
-                            />
-                            <div class="my-auto">
-                                <p class="text-primary font-bold">
-                                    112 Trucker Snapback
-                                </p>
-                                <span
-                                    >The Ultimate Blend of Style and
-                                    Comfort</span
-                                >
+                        <div
+                            class="grid lg:grid-cols-2 grid-cols-1 gap-[30px] border-b border-gray-300 pb-10"
+                        >
+                            <div class="p-[10px]">
+                                <p class="text-right">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-[10px]">
+                                <p class="text-right">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <button class="cursor-pointer my-auto">
-                            <img
-                                :src="asset('assets/img/order1/arrowUp.png')"
-                                alt=""
-                            />
-                        </button>
-                    </div>
-
-                    <div
-                        class="w-full flex justify-between border-b border-gray-300"
-                    >
-                        <div class="flex">
-                            <img
-                                :src="asset('assets/img/order1/image2.png')"
-                                class="h-[100px]"
-                                alt=""
-                            />
-                            <div class="my-auto">
-                                <p class="text-primary font-bold">
-                                    112 Trucker Snapback
-                                </p>
-                                <span
-                                    >The Ultimate Blend of Style and
-                                    Comfort</span
-                                >
-                            </div>
-                        </div>
-                        <button class="cursor-pointer my-auto">
-                            <img
-                                :src="asset('assets/img/order1/arrowUp.png')"
-                                alt=""
-                            />
-                        </button>
-                    </div>
+                    </Collapse>
                 </div>
 
                 <div class="flex flex-col gap-[30px] w-full">
@@ -529,7 +707,8 @@ const isExpanded = ref(false);
                     </div>
 
                     <div
-                        class="w-full flex justify-between border-b border-gray-300"
+                        class="w-full flex justify-between cursor-pointer"
+                        @click="isExpandedYoopong = !isExpandedYoopong"
                     >
                         <div class="flex">
                             <img
@@ -550,91 +729,262 @@ const isExpanded = ref(false);
                         <button class="cursor-pointer my-auto">
                             <img
                                 :src="asset('assets/img/order1/arrowUp.png')"
+                                :class="
+                                    'transition ease ease-out my-auto ' +
+                                    (isExpandedYoopong && ' rotate-180')
+                                "
                                 alt=""
                             />
                         </button>
                     </div>
 
-                    <div
-                        class="w-full flex justify-between border-b border-gray-300"
-                    >
-                        <div class="flex">
-                            <img
-                                :src="asset('assets/img/order1/image2.png')"
-                                class="h-[100px]"
-                                alt=""
-                            />
-                            <div class="my-auto">
-                                <p class="text-primary font-bold">
-                                    112 Trucker Snapback
-                                </p>
-                                <span
-                                    >The Ultimate Blend of Style and
-                                    Comfort</span
+                    <Collapse :when="isExpandedYoopong" class="v-collapse">
+                        <div class="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
+                            >
+                                <p
+                                    class="font-semibold text-center p-[10px] text-primary"
                                 >
+                                    One Size
+                                </p>
+                                <div
+                                    class="bg-white rounded text-center p-[10px]"
+                                >
+                                    7” - 7 3/4”
+                                </div>
                             </div>
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
+                            >
+                                <div class="grid grid-cols-7 gap-2">
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            1-6
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $22
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            7-23
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $20
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            24
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $19
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            48
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $18
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            96
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $17
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            144
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $16
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            288+
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $15
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                            <p class="text-gray-400 text-right text-sm">
+                                Price includes decoration
+                            </p>
                         </div>
-                        <button class="cursor-pointer my-auto">
-                            <img
-                                :src="asset('assets/img/order1/arrowUp.png')"
-                                alt=""
-                            />
-                        </button>
-                    </div>
 
-                    <div
-                        class="w-full flex justify-between border-b border-gray-300"
-                    >
-                        <div class="flex">
-                            <img
-                                :src="asset('assets/img/order1/image2.png')"
-                                class="h-[100px]"
-                                alt=""
-                            />
-                            <div class="my-auto">
-                                <p class="text-primary font-bold">
-                                    112 Trucker Snapback
-                                </p>
-                                <span
-                                    >The Ultimate Blend of Style and
-                                    Comfort</span
-                                >
+                        <div
+                            class="grid lg:grid-cols-2 grid-cols-1 gap-[30px] border-b border-gray-300 pb-10"
+                        >
+                            <div class="p-[10px]">
+                                <p class="text-right">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-[10px]">
+                                <p class="text-right">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <button class="cursor-pointer my-auto">
-                            <img
-                                :src="asset('assets/img/order1/arrowUp.png')"
-                                alt=""
-                            />
-                        </button>
-                    </div>
-
-                    <div
-                        class="w-full flex justify-between border-b border-gray-300"
-                    >
-                        <div class="flex">
-                            <img
-                                :src="asset('assets/img/order1/image2.png')"
-                                class="h-[100px]"
-                                alt=""
-                            />
-                            <div class="my-auto">
-                                <p class="text-primary font-bold">
-                                    112 Trucker Snapback
-                                </p>
-                                <span
-                                    >The Ultimate Blend of Style and
-                                    Comfort</span
-                                >
-                            </div>
-                        </div>
-                        <button class="cursor-pointer my-auto">
-                            <img
-                                :src="asset('assets/img/order1/arrowUp.png')"
-                                alt=""
-                            />
-                        </button>
-                    </div>
+                    </Collapse>
                 </div>
 
                 <div class="flex flex-col gap-[30px] w-full">
@@ -654,7 +1004,8 @@ const isExpanded = ref(false);
                     </div>
 
                     <div
-                        class="w-full flex justify-between border-b border-gray-300"
+                        class="w-full flex justify-between cursor-pointer"
+                        @click="isExpandedMade = !isExpandedMade"
                     >
                         <div class="flex">
                             <img
@@ -675,21 +1026,273 @@ const isExpanded = ref(false);
                         <button class="cursor-pointer my-auto">
                             <img
                                 :src="asset('assets/img/order1/arrowUp.png')"
+                                :class="
+                                    'transition ease ease-out my-auto ' +
+                                    (isExpandedMade && ' rotate-180')
+                                "
                                 alt=""
                             />
                         </button>
                     </div>
+
+                    <Collapse :when="isExpandedMade" class="v-collapse">
+                        <div class="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
+                            >
+                                <p
+                                    class="font-semibold text-center p-[10px] text-primary"
+                                >
+                                    One Size
+                                </p>
+                                <div
+                                    class="bg-white rounded text-center p-[10px]"
+                                >
+                                    7” - 7 3/4”
+                                </div>
+                            </div>
+                            <div
+                                class="rounded p-[10px] bg-primary bg-opacity-5"
+                            >
+                                <div class="grid grid-cols-7 gap-2">
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            1-6
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $22
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            7-23
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $20
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            24
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $19
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            48
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $18
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            96
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $17
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            144
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $16
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="font-semibold text-center p-[10px] text-primary"
+                                        >
+                                            288+
+                                        </p>
+                                        <div
+                                            class="bg-white rounded text-center p-[10px]"
+                                        >
+                                            $15
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                            <p class="text-gray-400 text-right text-sm">
+                                Price includes decoration
+                            </p>
+                        </div>
+
+                        <div
+                            class="grid lg:grid-cols-2 grid-cols-1 gap-[30px] border-b border-gray-300 pb-10"
+                        >
+                            <div class="p-[10px]">
+                                <p class="text-right">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-[10px]">
+                                <p class="text-right">OSFA</p>
+                                <div class="flex flex-col gap-[30px]">
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex">
+                                            <img
+                                                :src="
+                                                    asset(
+                                                        'assets/img/order1/hat_62.png'
+                                                    )
+                                                "
+                                                class="h-[70px] mr-[30px]"
+                                                alt=""
+                                            />
+                                            <span class="my-auto">Black</span>
+                                        </div>
+                                        <vue-number-input
+                                            class="border border-gray-300 rounded-full w-[100px] h-8 my-auto"
+                                            placeholder="0"
+                                            :min="0"
+                                            controls
+                                        ></vue-number-input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Collapse>
                 </div>
 
                 <div class="flex justify-between">
                     <button
-                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary bg-opacity-5 text-primary"
+                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary bg-opacity-5 text-primary hover:bg-opacity-20 transition ease ease-out"
                     >
                         BACK
                     </button>
                     <a
                         href="/order/upload"
-                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white flex justify-center items-center"
+                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white flex justify-center items-center hover:bg-opacity-80 transition ease ease-out"
                     >
                         <span class="py-auto">NEXT</span>
                     </a>

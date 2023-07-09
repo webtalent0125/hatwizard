@@ -25,7 +25,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                         class="grid lg:flex lg:justify-between sm:grid-cols-2 grid-cols-1 gap-4"
                     >
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary"
+                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary"
                         >
                             <img
                                 :src="asset('assets/img/step/start.png')"
@@ -40,7 +40,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             alt="start"
                         />
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
+                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
                                 :src="asset('assets/img/step/cap.png')"
@@ -55,7 +55,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             alt="start"
                         />
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
+                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold text-primary2"
                         >
                             <img
                                 :src="asset('assets/img/step/vector.png')"
@@ -70,7 +70,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                             alt="start"
                         />
                         <div
-                            class="rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
+                            class="cursor-pointer hover:bg-gray-100 transition ease-linear rounded-full bg-white py-[10px] px-[30px] h-[50px] lg:w-[200px] w-full flex items-center font-semibold"
                         >
                             <img
                                 :src="
@@ -470,13 +470,13 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 
                 <div class="flex justify-between mt-[60px]">
                     <a
-                        href="/order1"
-                        class="text-center text-primary h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary bg-opacity-5 flex justify-center items-center"
+                        href="/order/start"
+                        class="text-center text-primary h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary bg-opacity-5 flex justify-center items-center hover:bg-opacity-20 transition ease ease-out"
                     >
                         <span class="py-auto">BACK</span>
                     </a>
                     <button
-                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white"
+                        class="text-center h-[60px] w-[240px] rounded-full px-[30x] font-bold bg-primary text-white hover:bg-opacity-80 transition ease ease-out"
                     >
                         NEXT
                     </button>
